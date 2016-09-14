@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='description' content='From basico para el login/registro, utilizando herramientas de Jquery'>
+    <meta content="form, login, registro" name="keywords" />
+    <meta name='author' content='Carlos Anselmi'>
+    <title>Form v1</title>
+    <link rel="stylesheet" href="style-form.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style type="text/css">
+    .alert {
+        width: 50%;
+        margin: 0px auto;
+        display: none;
+    }
+    
+    .input-group1::after {
+        content: '1';
+        width: 100%;
+        background-color: yellow;
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        text-align: center;
+        border-radius: 50px;
+        height: 25px;
+        z-index: 100;
+        margin: 0px auto;
+    }
+    
+    .form-sign {
+        margin: 0px auto;
+        background-color: white;
+        padding: 10px;
+        position: relative;
+        border-color: #000;
+        border: 1px;
+        border-radius: 10px;
+    }
+    
+    .form-sign h1 {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .correcto {
+        border: 1px solid #BEDB39;
+    }
+    
+    .incorrecto {
+        border: 1px solid #FD331F;
+    }
+    
+    .input-group-addon,
+    #submitRegistro {
+        background-color: #BEDB39;
+    }
+    </style>
+</head>
+
+<body>
+    <div style="position: absolute; width: 100%; margin: 0px auto; z-index: 100; margin-top: 50px ">
+        <div class="alert alert-success" style="background-color: #BEDB39;  opacity: 0.5;">
+            <a href="#" class="alert-link"></a>
+        </div>
+        <div class="alert alert-info">
+            <a href="#" class="alert-link"></a>
+        </div>
+        <div class="alert alert-warning">
+            <a href="#" class="alert-link"></a>
+        </div>
+        <div class="alert alert-danger">
+            <a href="#" class="alert-link"></a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row text-center" style="padding-top: 20%; margin: 0px auto">
+            <!-- form-horizontal -->
+            <form class="form-sign col-lg-6 col-sm-6 col-sx-12 " style="float: none!important;" id="form-sign" action="index_submit" method="post">
+                <h1>REGISTRO</h1>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i><span> Username*</span></div>
+                        <input class="form-control" placeholder="Username" maxlength="20" minlength="5" id="username" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class='col-lg-12 col-sm-12 col-sx-12'>
+                        <div class="row">
+                            <div class="form-group col-lg-6 col-sm-6 col-sx-12">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="glyphicon glyphicon-lock"></i><span> Password*</span></div>
+                                    <input class="form-control" placeholder="password" maxlength="20" minlength="5" id="pass1" type="password">
+                                </div>
+                            </div>
+                            <div class="form-group col-lg-6 col-sm-6 col-sx-12">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="glyphicon glyphicon-lock"></i><span> Password*</span></div>
+                                    <input class="form-control" placeholder="password" maxlength="20" minlength="5" id="pass2" type="password">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i><span> Email<span></div>
+						<input class="form-control" placeholder="email" id="email" type="email"> 
+					</div>
+				</div>
+				<div class="row">
+				<div class="col-lg-8 col-sm-5 col-sx-12">
+					<span>By clicking Register, you agree on our a <a href="" style="color: #555; font-weight: 800; font-family: arial">terms and condition</a>.</span>
+                        </div>
+                        <div class="col-lg-4 col-sm-5 col-sx-12" style="margin: 0px auto">
+                            <div class="clearfix">
+                                <button type="submit" name="submit" id="submitRegistro" class="btn btn-default button button-medium">
+                                    <i class="glyphicon glyphicon-transfer"></i><span> Aceptar</span></button>
+                            </div>
+                        </div>
+            </form>
+            </div>
+            </div>
+            <script src='js/jquery.min.js' type="text/javascript"></script>
+            <script src="js/jquery-ui.js" type="text/javascript"></script>
+            <script src="js/form.js" type="text/javascript"></script>
+            <script type="text/javascript" charset="utf-8">
+            $(document).ready(function() {
+                $('#pass2').on('keyup focus keydown', function() {
+                    if ($('#pass1').val() == $(this).val())
+                        $(this).removeClass('incorrecto').addClass('correcto');
+                    else
+                        $(this).removeClass('correcto').addClass('incorrecto');
+                });
+                $('.form-control').on('focus focusout', function() {
+                    $(this).siblings('.input-group-addon').find('span').toggle(400);
+                    
+                });
+                $('.alert').click(function() {
+                	$('.alert-success').css()
+                });
+                $('#submitRegistro').click(function(evento) {
+                	evento.preventDefault();
+                	$('#form-sign ')[0].reset();
+                    $('.alert-success').css('display' , 'block');
+                });
+            });
+            </script>
+</body>
+
+</html>

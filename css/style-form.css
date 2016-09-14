@@ -1,0 +1,87 @@
+@font-face {
+	font-family: 'Roboto-Medium';
+	src: url("../fonts/roboto/Roboto-Medium.ttf") format("truetype");
+}
+@font-face {
+	font-family: 'Roboto-Black';
+	src: url("../fonts/roboto/Roboto-Black.ttf") format("truetype");
+}@font-face {
+	font-family: 'Roboto-ThinItalic';
+	src: url("../fonts/roboto/Roboto-ThinItalic.ttf") format("truetype");
+}
+
+body{
+	background-color: #3E606F;
+	background: -webkit-linear-gradient(right, #3E606F, #193441);
+	background: -moz-linear-gradient(right, #3E606F, #193441);
+	background: -o-linear-gradient(right, #3E606F, #193441);
+	background: linear-gradient(to left, #3E606F, #193441);
+  	font-family: 'Roboto-Black';
+	margin: 0px auto;
+	padding: 0px;
+}
+h1{
+	color: #fff;
+	text-align: center;
+/*	font-family: 'Roboto', sans-serif;*/
+	font-size: 3em;
+}
+.login-page .form{
+	background-color: #fff;
+	position: relative;
+	width: 25%;
+	min-height: 200px;
+	margin: 0px auto;
+	text-align: center;
+	padding: 50px;
+	-webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	-moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.login-page .form input{
+	font-size: 1em;
+	font-family: 'Roboto', sans-serif;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	outline: 0;
+	box-sizing: border-box;
+}
+.login-page .form input:focus {
+      border: 1px solid  #193441 !important;
+      color:  #193441 !important;
+}
+
+.login-page .form button{
+	background-color: #193441;
+	border: 0;
+	width: 100%;
+	height: 50px;
+	color: #fff;
+	font-size: 1.5em;
+	font-family: 'Roboto-ThinItalic';
+}
+.login-page .form p{
+	font-family: 'Roboto-Black';
+	font-size: 1em;
+}
+.login-page .form p a{
+	color: #193441;
+}
+
+.form .register-form {
+  display: none;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .register-form {
+  display: none;
+}
+
+.form button:hover,.form button:active,.form button:focus {
+  background:  #3E606F;
+}
